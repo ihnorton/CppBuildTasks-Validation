@@ -2,7 +2,7 @@
 # Released under the term specified in file LICENSE.txt
 # SPDX short identifier: MIT
 #
-name: get-cmake-self-hosted-rumner-test
+name: get-cmake-self-hosted-runner-test
 on: [push, workflow_dispatch]
 
 jobs:
@@ -40,6 +40,19 @@ jobs:
         with:
           useLocalCache: true
           useCloudCache: false
+  
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: npm install '@actions/tool-cache'
+      - name: Dump versions of 'cmakeninja' tool
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const tc = require('@actions/tool-cache');
+            const allNodeVersions = tc.findAllVersions('cmakeninja');
+            console.log(`Versions of cmakeninja available: ${allNodeVersions}`);
+            console.log(context);
       - name: Dump the content of $RUNNER_TEMP
         run: find $RUNNER_TEMP
         shell: bash
