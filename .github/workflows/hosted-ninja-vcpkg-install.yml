@@ -41,7 +41,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@dev/fix_local_cache_key
       - name: List $RUNNER_WORKSPACE before build
         run: find $RUNNER_WORKSPACE
         shell: bash

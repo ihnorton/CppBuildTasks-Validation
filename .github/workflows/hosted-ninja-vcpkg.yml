@@ -33,7 +33,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@dev/fix_local_cache_key
       - name: Dump the content of $RUNNER_TEMP
         run: find $RUNNER_TEMP
         shell: bash

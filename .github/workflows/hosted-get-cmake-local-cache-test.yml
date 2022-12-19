@@ -26,7 +26,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@dev/fix_local_cache_key
         with:
           useLocalCache: true
           useCloudCache: false
@@ -36,7 +36,7 @@ jobs:
       - name: Dump the content of $RUNNER_WORKSPACE
         run: find $RUNNER_WORKSPACE
         shell: bash
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@dev/fix_local_cache_key
         with:
           useLocalCache: true
           useCloudCache: false

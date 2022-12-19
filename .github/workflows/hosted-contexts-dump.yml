@@ -57,7 +57,7 @@ jobs:
       - name: dir
         run: gci -recurse ${{ runner.workspace }}
         if: contains( runner.os, 'windows')
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@dev/fix_local_cache_key
       - name: Setup vcpkg or restore from cache the artifacts
         uses: lukka/run-vcpkg@v10
         id: runvcpkg
