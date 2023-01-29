@@ -1,0 +1,5 @@
+{
+	"name": "cargo-sample",
+	"version-string": "1.0.0",
+	"dependencies": ["libvpx", "libyuv"]
+}
